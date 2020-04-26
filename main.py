@@ -59,9 +59,7 @@ def timelapse_loop(sleep_time=10):
             i+=1
             time.sleep(sleep_time)
             camera.capture(f'captures/{start_time}/img-{i:07d}.jpg')
-            if i > 50:
-                break
-        
+       
     except KeyboardInterrupt:
         camera.stop_preview()
         exit()
@@ -78,8 +76,8 @@ def main():
     else:
         sleep_time = None
     
-#     timelapse_loop(60)
-#     create_video()
+    timelapse_loop(sleep_time)
+    create_video()
     
     
 if __name__ == "__main__":
